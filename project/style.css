@@ -19,7 +19,7 @@ header {
 
 header h1 { 
 margin: 0; 
-font-size: 24px; /* можно уменьшить для мобильных */ 
+font-size: 30px; /* можно уменьшить для мобильных */ 
 text-align: center; /* центрируем сам текст */ 
 flex: 1; /* занимает всю ширину */ 
 }
@@ -127,4 +127,5 @@ transition: background-color 0.3s ease;
 } 
 
 .close-btn:hover { background-color: #434343; }
+
 
