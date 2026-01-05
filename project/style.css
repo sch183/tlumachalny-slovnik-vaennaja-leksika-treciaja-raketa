@@ -6,7 +6,7 @@ p { margin: 0; text-align: justify; }
 header {
 	position: fixed;
 	top: 0; left: 0; right: 0;
-	height: 80px;
+	/*height: 80px;*/
 	background: #434343;
 	color: #fff;
 	
@@ -14,6 +14,8 @@ header {
 	align-items: center; 
 	justify-content: center; /* центрируем содержимое по горизонтали */ 
 	text-align: center; /* центрируем текст внутри */ 
+	padding: 10px; /* вместо фиксированной высоты */ 
+	height: auto; /* пусть растягивается */
 	z-index: 1000;
 }
 
@@ -21,8 +23,17 @@ header h1 {
 margin: 0; 
 font-size: 30px; /* можно уменьшить для мобильных */ 
 text-align: center; /* центрируем сам текст */ 
-flex: 1; /* занимает всю ширину */ 
+/*flex: 1; /* занимает всю ширину */ 
+max-width: 95%; /* чтобы текст не прилипал к краям */ 
+word-wrap: break-word; /* перенос длинных слов */
 }
+@media (max-width: 600px) { 
+	header h1 { 
+		font-size: 20px; /* уменьшенный размер */ 
+		line-height: 1.3; /* чуть больше межстрочный интервал */
+		padding: 0 10px; /* отступы от краёв */ 
+		} 
+	}
 
 /* Контент */
 /* для больших экранов — три колонки */
@@ -141,6 +152,7 @@ transition: background-color 0.3s ease;
 } 
 
 .close-btn:hover { background-color: #434343; }
+
 
 
 
