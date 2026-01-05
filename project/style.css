@@ -4,15 +4,24 @@ p { margin: 0; text-align: justify; }
 
 /* Шапка */
 header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: 80px;
-  background: #434343;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
+	position: fixed;
+	top: 0; left: 0; right: 0;
+	height: 80px;
+	background: #434343;
+	color: #fff;
+	
+	display: flex; 
+	align-items: center; 
+	justify-content: center; /* центрируем содержимое по горизонтали */ 
+	text-align: center; /* центрируем текст внутри */ 
+	z-index: 1000;
+}
+
+header h1 { 
+margin: 0; 
+font-size: 24px; /* можно уменьшить для мобильных */ 
+text-align: center; /* центрируем сам текст */ 
+flex: 1; /* занимает всю ширину */ 
 }
 
 /* Контент */
@@ -118,3 +127,4 @@ transition: background-color 0.3s ease;
 } 
 
 .close-btn:hover { background-color: #434343; }
+
