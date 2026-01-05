@@ -25,6 +25,7 @@ flex: 1; /* занимает всю ширину */
 }
 
 /* Контент */
+/* для больших экранов — три колонки */
 .content {
   padding: 100px 20px;
   width: 100%;
@@ -33,6 +34,19 @@ flex: 1; /* занимает всю ширину */
   gap: 30px;
   box-sizing: border-box;
 }
+/* для мобильных — две колонки */ 
+@media (max-width: 768px) { 
+	.content { 
+		grid-template-columns: repeat(2, 1fr); 
+		} 
+	} 
+/* для совсем маленьких экранов — одна колонка */ 
+@media (max-width: 480px) { 
+	.content { 
+		grid-template-columns: 1fr; 
+		} 
+	}
+
 .picture {
   background: #dbdbdb;
   display: flex;
@@ -127,5 +141,6 @@ transition: background-color 0.3s ease;
 } 
 
 .close-btn:hover { background-color: #434343; }
+
 
 
