@@ -6,7 +6,8 @@ p { margin: 0; text-align: justify; }
 header {
 	position: fixed;
 	top: 0; left: 0; right: 0;
-	/*height: 80px;*/
+	height: 60px;
+	padding: 10px;
 	background: #434343;
 	color: #fff;
 	
@@ -14,31 +15,20 @@ header {
 	align-items: center; 
 	justify-content: center; /* центрируем содержимое по горизонтали */ 
 	text-align: center; /* центрируем текст внутри */ 
-	padding: 10px; /* вместо фиксированной высоты */ 
-	height: auto; /* пусть растягивается */
 	z-index: 1000;
 }
 
 header h1 { 
+font-size: 25px;
 margin: 0; 
-font-size: 30px; /* можно уменьшить для мобильных */ 
 text-align: center; /* центрируем сам текст */ 
-/*flex: 1; /* занимает всю ширину */ 
-max-width: 95%; /* чтобы текст не прилипал к краям */ 
-word-wrap: break-word; /* перенос длинных слов */
+flex: 1; /* занимает всю ширину */ 
 }
-@media (max-width: 600px) { 
-	header h1 { 
-		font-size: 20px; /* уменьшенный размер */ 
-		line-height: 1.3; /* чуть больше межстрочный интервал */
-		padding: 0 10px; /* отступы от краёв */ 
-		} 
-	}
 
 /* Контент */
 /* для больших экранов — три колонки */
 .content {
-  padding: 20px;
+  padding: 100px 20px;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -46,13 +36,29 @@ word-wrap: break-word; /* перенос длинных слов */
   box-sizing: border-box;
 }
 /* для мобильных — две колонки */ 
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
+	header {
+		height: AUTO;
+	}
+	header h1 {
+		font-size: 25px; /* можно уменьшить для мобильных */ 
+	}
 	.content { 
 		grid-template-columns: repeat(2, 1fr); 
 		} 
 	} 
 /* для совсем маленьких экранов — одна колонка */ 
 @media (max-width: 480px) { 
+	header {
+		height: AUTO;
+	}
+	header h1 {
+		font-size: 20px; /* можно уменьшить для мобильных */ 
+	}
+	
+	h2 {
+		font-size: 20px; /* можно уменьшить для мобильных */
+	}
 	.content { 
 		grid-template-columns: 1fr; 
 		} 
@@ -152,6 +158,7 @@ transition: background-color 0.3s ease;
 } 
 
 .close-btn:hover { background-color: #434343; }
+
 
 
 
